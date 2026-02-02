@@ -1,0 +1,18 @@
+CREATE TABLE redeem_details (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  redeem_id UUID NOT NULL,
+  point_history_id UUID NOT NULL,
+  point_used INT NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+
+  CONSTRAINT fk_redeem_details_redeem
+    FOREIGN KEY (redeem_id)
+    REFERENCES redeem_transactions(id)
+    ON DELETE CASCADE,
+
+  CONSTRAINT fk_redeem_details_point_history
+    FOREIGN KEY (point_history_id)
+    REFERENCES point_histories(id)
+);
+
+CREATE INDEX idx_redeem_details_redeem ON redeem_details(redeem_id);
