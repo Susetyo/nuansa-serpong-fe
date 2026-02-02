@@ -1,0 +1,16 @@
+{
+  "name": "Nuansa Serpong",
+  "short_name": "Nuansa",
+  "description": "Nuansa Serpong web experience",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f3ee",
+  "theme_color": "#0f4c2f",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
